@@ -24,16 +24,15 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_ids');
             try {
-                return yield this.callCommand('get_settings_by_ids', correlationId, {
+                let res = yield this.callCommand('get_settings_by_ids', correlationId, {
                     recipient_ids: recipientIds
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -41,16 +40,15 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_id');
             try {
-                return yield this.callCommand('get_settings_by_id', correlationId, {
+                let res = yield this.callCommand('get_settings_by_id', correlationId, {
                     recipient_id: recipientId
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -58,16 +56,15 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_phone');
             try {
-                return yield this.callCommand('get_settings_by_phone', correlationId, {
+                let res = yield this.callCommand('get_settings_by_phone', correlationId, {
                     phone: phone
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -75,16 +72,15 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.set_settings');
             try {
-                return yield this.callCommand('set_settings', correlationId, {
+                let res = yield this.callCommand('set_settings', correlationId, {
                     settings: settings
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -92,16 +88,15 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.set_verified_settings');
             try {
-                return yield this.callCommand('set_verified_settings', correlationId, {
+                let res = yield this.callCommand('set_verified_settings', correlationId, {
                     settings: settings
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -109,19 +104,18 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.set_recipient');
             try {
-                return yield this.callCommand('set_recipient', correlationId, {
+                let res = yield this.callCommand('set_recipient', correlationId, {
                     recipient_id: recipientId,
                     name: name,
                     phone: phone,
                     language: language
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -129,17 +123,16 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.set_subscriptions');
             try {
-                return yield this.callCommand('set_subscriptions', correlationId, {
+                let res = yield this.callCommand('set_subscriptions', correlationId, {
                     recipient_id: recipientId,
                     subscriptions: subscriptions
                 });
+                timing.endTiming();
+                return res;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -150,13 +143,11 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
                 yield this.callCommand('delete_settings_by_id', correlationId, {
                     recipient_id: recipientId
                 });
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -167,13 +158,11 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
                 yield this.callCommand('resend_verification', correlationId, {
                     recipient_id: recipientId
                 });
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -185,13 +174,11 @@ class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.Com
                     recipient_id: recipientId,
                     code: code
                 });
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }

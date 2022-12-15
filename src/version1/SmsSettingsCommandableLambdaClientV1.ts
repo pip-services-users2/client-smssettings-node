@@ -19,18 +19,18 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
         let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_ids');
 
         try {
-            return await this.callCommand(
+            let res = await this.callCommand(
                 'get_settings_by_ids',
                 correlationId,
                 {
                     recipient_ids: recipientIds
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -38,18 +38,18 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
         let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_id');
 
         try {
-            return await this.callCommand(
+            let res = await this.callCommand(
                 'get_settings_by_id',
                 correlationId,
                 {
                     recipient_id: recipientId
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -57,18 +57,18 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
         let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_phone');
 
         try {
-            return await this.callCommand(
+            let res = await this.callCommand(
                 'get_settings_by_phone',
                 correlationId,
                 {
                     phone: phone
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -76,18 +76,18 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
         let timing = this.instrument(correlationId, 'sms_settings.set_settings');
 
         try {
-            return await this.callCommand(
+            let res = await this.callCommand(
                 'set_settings',
                 correlationId,
                 {
                     settings: settings
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -95,18 +95,18 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
         let timing = this.instrument(correlationId, 'sms_settings.set_verified_settings');
 
         try {
-            return await this.callCommand(
+            let res = await this.callCommand(
                 'set_verified_settings',
                 correlationId,
                 {
                     settings: settings
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -115,7 +115,7 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
         let timing = this.instrument(correlationId, 'sms_settings.set_recipient');
 
         try {
-            return await this.callCommand(
+            let res = await this.callCommand(
                 'set_recipient',
                 correlationId,
                 {
@@ -125,11 +125,11 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
                     language: language
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -137,7 +137,7 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
         let timing = this.instrument(correlationId, 'sms_settings.set_subscriptions');
 
         try {
-            return await this.callCommand(
+            let res = await this.callCommand(
                 'set_subscriptions',
                 correlationId,
                 {
@@ -145,11 +145,11 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
                     subscriptions: subscriptions
                 }
             );
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -164,11 +164,10 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
                     recipient_id: recipientId
                 }
             );
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -183,11 +182,10 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
                     recipient_id: recipientId
                 }
             );
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -203,11 +201,10 @@ export class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClien
                     code: code
                 }
             );
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 }

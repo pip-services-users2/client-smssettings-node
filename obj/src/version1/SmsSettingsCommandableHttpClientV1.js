@@ -22,177 +22,78 @@ class SmsSettingsCommandableHttpClientV1 extends pip_services3_rpc_nodex_1.Comma
     }
     getSettingsByIds(correlationId, recipientIds) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_ids');
-            try {
-                return yield this.callCommand('get_settings_by_ids', correlationId, {
-                    recipient_ids: recipientIds
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('get_settings_by_ids', correlationId, {
+                recipient_ids: recipientIds
+            });
         });
     }
     getSettingsById(correlationId, recipientId) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_id');
-            try {
-                return yield this.callCommand('get_settings_by_id', correlationId, {
-                    recipient_id: recipientId
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('get_settings_by_id', correlationId, {
+                recipient_id: recipientId
+            });
         });
     }
     getSettingsByPhoneSettings(correlationId, phone) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_phone');
-            try {
-                return yield this.callCommand('get_settings_by_phone', correlationId, {
-                    phone: phone
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('get_settings_by_phone', correlationId, {
+                phone: phone
+            });
         });
     }
     setSettings(correlationId, settings) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.set_settings');
-            try {
-                return yield this.callCommand('set_settings', correlationId, {
-                    settings: settings
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('set_settings', correlationId, {
+                settings: settings
+            });
         });
     }
     setVerifiedSettings(correlationId, settings) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.set_verified_settings');
-            try {
-                return yield this.callCommand('set_verified_settings', correlationId, {
-                    settings: settings
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('set_verified_settings', correlationId, {
+                settings: settings
+            });
         });
     }
     setRecipient(correlationId, recipientId, name, phone, language) {
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.set_recipient');
-            try {
-                return yield this.callCommand('set_recipient', correlationId, {
-                    recipient_id: recipientId,
-                    name: name,
-                    phone: phone,
-                    language: language
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('set_recipient', correlationId, {
+                recipient_id: recipientId,
+                name: name,
+                phone: phone,
+                language: language
+            });
         });
     }
     setSubscriptions(correlationId, recipientId, subscriptions) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.set_subscriptions');
-            try {
-                return yield this.callCommand('set_subscriptions', correlationId, {
-                    recipient_id: recipientId,
-                    subscriptions: subscriptions
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('set_subscriptions', correlationId, {
+                recipient_id: recipientId,
+                subscriptions: subscriptions
+            });
         });
     }
     deleteSettingsById(correlationId, recipientId) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.delete_settings_by_id');
-            try {
-                return yield this.callCommand('delete_settings_by_id', correlationId, {
-                    recipient_id: recipientId
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('delete_settings_by_id', correlationId, {
+                recipient_id: recipientId
+            });
         });
     }
     resendVerification(correlationId, recipientId) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.resend_verification');
-            try {
-                return yield this.callCommand('resend_verification', correlationId, {
-                    recipient_id: recipientId
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('resend_verification', correlationId, {
+                recipient_id: recipientId
+            });
         });
     }
     verifyPhone(correlationId, recipientId, code) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.verify_phone');
-            try {
-                return yield this.callCommand('verify_phone', correlationId, {
-                    recipient_id: recipientId,
-                    code: code
-                });
-            }
-            catch (err) {
-                timing.endFailure(err);
-                throw err;
-            }
-            finally {
-                timing.endTiming();
-            }
+            return yield this.callCommand('verify_phone', correlationId, {
+                recipient_id: recipientId,
+                code: code
+            });
         });
     }
 }

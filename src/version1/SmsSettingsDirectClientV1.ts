@@ -23,12 +23,12 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_ids');
         
         try {
-            return await this._controller.getSettingsByIds(correlationId, recipientIds);
+            let res = await this._controller.getSettingsByIds(correlationId, recipientIds);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -36,12 +36,12 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_id');
         
         try {
-            return await this._controller.getSettingsById(correlationId, recipientId);
+            let res = await this._controller.getSettingsById(correlationId, recipientId);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -49,12 +49,12 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         let timing = this.instrument(correlationId, 'sms_settings.get_settings_by_phone');
         
         try {
-            return await this._controller.getSettingsBySmsSettings(correlationId, phone);
+            let res = await this._controller.getSettingsBySmsSettings(correlationId, phone);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -62,12 +62,12 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         let timing = this.instrument(correlationId, 'sms_settings.set_settings');
         
         try {
-            return await this._controller.setSettings(correlationId, settings);
+            let res = await this._controller.setSettings(correlationId, settings);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -75,12 +75,12 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         let timing = this.instrument(correlationId, 'sms_settings.set_verified_settings');
 
         try {
-            return await this._controller.setVerifiedSettings(correlationId, settings);
+            let res = await this._controller.setVerifiedSettings(correlationId, settings);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -89,12 +89,12 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         let timing = this.instrument(correlationId, 'sms_settings.set_recipient');
         
         try {
-            return await this._controller.setRecipient(correlationId, recipientId, name, phone, language);
+            let res = await this._controller.setRecipient(correlationId, recipientId, name, phone, language);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -102,12 +102,12 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         let timing = this.instrument(correlationId, 'sms_settings.set_subscriptions');
         
         try {
-            return await this._controller.setSubscriptions(correlationId, recipientId, subscriptions);
+            let res = await this._controller.setSubscriptions(correlationId, recipientId, subscriptions);
+            timing.endTiming();
+            return res;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -116,11 +116,10 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         
         try {
             await this._controller.deleteSettingsById(correlationId, recipientId);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -129,11 +128,10 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
 
         try {
             await this._controller.resendVerification(correlationId, recipientId);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -142,11 +140,10 @@ export class SmsSettingsDirectClientV1 extends DirectClient<any> implements ISms
         
         try {
             await this._controller.verifyPhone(correlationId, recipientId, code);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
