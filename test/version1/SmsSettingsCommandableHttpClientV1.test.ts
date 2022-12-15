@@ -6,9 +6,9 @@ import { ConsoleLogger } from 'pip-services3-components-nodex';
 import { SmsNullClientV1 } from 'client-sms-node';
 import { SmsSettingsMemoryPersistence } from 'service-smssettings-node';
 import { SmsSettingsController } from 'service-smssettings-node';
-import { SmsSettingsHttpServiceV1 } from 'service-smssettings-node';
+import { SmsSettingsCommandableServiceV1 } from 'service-smssettings-node';
 
-import { SmsSettingsHttpClientV1 } from '../../src/version1/SmsSettingsHttpClientV1';
+import { SmsSettingsCommandableHttpClientV1 } from '../../src/version1/SmsSettingsCommandableHttpClientV1';
 import { SmsSettingsClientFixtureV1 } from './SmsSettingsClientFixtureV1';
 
 var httpConfig = ConfigParams.fromTuples(
@@ -17,9 +17,9 @@ var httpConfig = ConfigParams.fromTuples(
     "connection.port", 3000
 );
 
-suite('SmsSettingsHttpClientV1', ()=> {
-    let service: SmsSettingsHttpServiceV1;
-    let client: SmsSettingsHttpClientV1;
+suite('SmsSettingsCommandableHttpClientV1', ()=> {
+    let service: SmsSettingsCommandableServiceV1;
+    let client: SmsSettingsCommandableHttpClientV1;
     let fixture: SmsSettingsClientFixtureV1;
 
     suiteSetup(async () => {
@@ -28,7 +28,7 @@ suite('SmsSettingsHttpClientV1', ()=> {
         let controller = new SmsSettingsController();
         controller.configure(new ConfigParams());
 
-        service = new SmsSettingsHttpServiceV1();
+        service = new SmsSettingsCommandableServiceV1();
         service.configure(httpConfig);
 
         let references: References = References.fromTuples(
@@ -41,7 +41,7 @@ suite('SmsSettingsHttpClientV1', ()=> {
         controller.setReferences(references);
         service.setReferences(references);
 
-        client = new SmsSettingsHttpClientV1();
+        client = new SmsSettingsCommandableHttpClientV1();
         client.setReferences(references);
         client.configure(httpConfig);
 

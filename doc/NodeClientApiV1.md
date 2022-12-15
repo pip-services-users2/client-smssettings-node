@@ -16,7 +16,7 @@ and provides high-level API to access the microservice for simple and productive
     - [deleteSettingsById()](#operation6)
     - [resendVerification()](#operation7)
     - [verifyPhone()](#operation8)
-* [SmsSettingsHttpClientV1 class](#client_http)
+* [SmsSettingsCommandableHttpClientV1 class](#client_http)
 * [SmsSettingsSenecaClientV1 class](#client_seneca)
 * [SmsSettingsDirectClientV1 class](#client_direct)
 * [SmsSettingsNullClientV1 class](#client_null)
@@ -64,7 +64,7 @@ var config = {
 };
 
 // Create the client instance
-var client = sdk.SmsSettingsHttpClientV1(config);
+var client = sdk.SmsSettingsCommandableHttpClientV1(config);
 
 // Open client connection to the microservice
 await client.open(null);
@@ -198,12 +198,12 @@ Confirms (verifies) primary sms address using verification code.
 - recipient_id: string - recipient unique id
 - code: string - password recovery code
 
-## <a name="client_http"></a> SmsSettingsHttpClientV1 class
+## <a name="client_http"></a> SmsSettingsCommandableHttpClientV1 class
 
-SmsSettingsHttpClientV1 is a client that implements HTTPprotocol
+SmsSettingsCommandableHttpClientV1 is a client that implements HTTPprotocol
 
 ```javascript
-class SmsSettingsHttpClientV1 extends CommandableHttpClient implements ISmsSettingsClientV1 {
+class SmsSettingsCommandableHttpClientV1 extends CommandableHttpClient implements ISmsSettingsClientV1 {
     constructor(config?: any);
     setReferences(refs);
     open(correlationId);

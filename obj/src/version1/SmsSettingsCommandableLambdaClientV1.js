@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsSettingsHttpClientV1 = void 0;
+exports.SmsSettingsCommandableLambdaClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
-const pip_services3_rpc_nodex_1 = require("pip-services3-rpc-nodex");
-class SmsSettingsHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpClient {
+const pip_services3_aws_nodex_1 = require("pip-services3-aws-nodex");
+class SmsSettingsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClient {
     constructor(config) {
-        super('v1/sms_settings');
+        super('sms_settings');
         let thisConfig = pip_services3_commons_nodex_1.ConfigParams.fromValue(config);
         this._defaultParameters = thisConfig.getSection('parameters');
         if (config != null)
@@ -147,7 +147,7 @@ class SmsSettingsHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpC
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.delete_settings_by_id');
             try {
-                return yield this.callCommand('delete_settings_by_id', correlationId, {
+                yield this.callCommand('delete_settings_by_id', correlationId, {
                     recipient_id: recipientId
                 });
             }
@@ -164,7 +164,7 @@ class SmsSettingsHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpC
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.resend_verification');
             try {
-                return yield this.callCommand('resend_verification', correlationId, {
+                yield this.callCommand('resend_verification', correlationId, {
                     recipient_id: recipientId
                 });
             }
@@ -181,7 +181,7 @@ class SmsSettingsHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpC
         return __awaiter(this, void 0, void 0, function* () {
             let timing = this.instrument(correlationId, 'sms_settings.verify_phone');
             try {
-                return yield this.callCommand('verify_phone', correlationId, {
+                yield this.callCommand('verify_phone', correlationId, {
                     recipient_id: recipientId,
                     code: code
                 });
@@ -196,5 +196,5 @@ class SmsSettingsHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpC
         });
     }
 }
-exports.SmsSettingsHttpClientV1 = SmsSettingsHttpClientV1;
-//# sourceMappingURL=SmsSettingsHttpClientV1.js.map
+exports.SmsSettingsCommandableLambdaClientV1 = SmsSettingsCommandableLambdaClientV1;
+//# sourceMappingURL=SmsSettingsCommandableLambdaClientV1.js.map

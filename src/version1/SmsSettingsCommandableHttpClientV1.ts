@@ -4,7 +4,7 @@ import { CommandableHttpClient } from 'pip-services3-rpc-nodex';
 import { SmsSettingsV1 } from './SmsSettingsV1';
 import { ISmsSettingsClientV1 } from './ISmsSettingsClientV1';
 
-export class SmsSettingsHttpClientV1 extends CommandableHttpClient implements ISmsSettingsClientV1 {
+export class SmsSettingsCommandableHttpClientV1 extends CommandableHttpClient implements ISmsSettingsClientV1 {
     private _defaultParameters: ConfigParams;
 
     constructor(config?: any) {

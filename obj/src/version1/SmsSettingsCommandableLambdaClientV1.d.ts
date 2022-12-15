@@ -1,7 +1,7 @@
 import { CommandableLambdaClient } from 'pip-services3-aws-nodex';
 import { SmsSettingsV1 } from './SmsSettingsV1';
 import { ISmsSettingsClientV1 } from './ISmsSettingsClientV1';
-export declare class SmsSettingsLambdaClientV1 extends CommandableLambdaClient implements ISmsSettingsClientV1 {
+export declare class SmsSettingsCommandableLambdaClientV1 extends CommandableLambdaClient implements ISmsSettingsClientV1 {
     private _defaultParameters;
     constructor(config?: any);
     getSettingsByIds(correlationId: string, recipientIds: string[]): Promise<SmsSettingsV1[]>;

@@ -1,9 +1,9 @@
 import { ConfigParams } from 'pip-services3-commons-nodex';
 
 import { SmsSettingsClientFixtureV1 } from './SmsSettingsClientFixtureV1';
-import { SmsSettingsLambdaClientV1 } from '../../src/version1/SmsSettingsLambdaClientV1';
+import { SmsSettingsCommandableLambdaClientV1 } from '../../src/version1/SmsSettingsCommandableLambdaClientV1';
 
-suite('SmsSettingsLambdaClient', ()=> {
+suite('SmsSettingsCommandableLambdaClient', ()=> {
     let AWS_LAMDBA_ARN = process.env["AWS_LAMDBA_ARN"] || "";
     let AWS_ACCESS_ID = process.env["AWS_ACCESS_ID"] || "";
     let AWS_ACCESS_KEY = process.env["AWS_ACCESS_KEY"] || "";
@@ -24,11 +24,11 @@ suite('SmsSettingsLambdaClient', ()=> {
     if (lambdaConfig.getAsNullableString("connection.protocol") != "aws")
         return;
 
-    let client: SmsSettingsLambdaClientV1;
+    let client: SmsSettingsCommandableLambdaClientV1;
     let fixture: SmsSettingsClientFixtureV1;
 
     setup(async () => {
-        client = new SmsSettingsLambdaClientV1();
+        client = new SmsSettingsCommandableLambdaClientV1();
         client.configure(lambdaConfig);
 
         fixture = new SmsSettingsClientFixtureV1(client);
