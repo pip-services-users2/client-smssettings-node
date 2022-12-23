@@ -5,4 +5,4 @@ export { SmsSettingsCommandableHttpClientV1 } from './SmsSettingsCommandableHttp
 export { SmsSettingsCommandableLambdaClientV1 } from './SmsSettingsCommandableLambdaClientV1';
 export { SmsSettingsDirectClientV1 } from './SmsSettingsDirectClientV1';
 export { SmsSettingsNullClientV1 } from './SmsSettingsNullClientV1';
-export { SmsSettingsMemoryClientV1 } from './SmsSettingsMemoryClientV1';
+export { SmsSettingsMockClientV1 } from './SmsSettingsMockClientV1';

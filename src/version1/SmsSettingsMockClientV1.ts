@@ -1,7 +1,7 @@
 import { ISmsSettingsClientV1 } from './ISmsSettingsClientV1';
 import { SmsSettingsV1 } from './SmsSettingsV1';
 
-export class SmsSettingsMemoryClientV1 implements ISmsSettingsClientV1 {
+export class SmsSettingsMockClientV1 implements ISmsSettingsClientV1 {
     private _settings: SmsSettingsV1[] = [];
 
     public async getSettingsByIds(correlationId: string, recipientIds: string[]): Promise<SmsSettingsV1[]> {

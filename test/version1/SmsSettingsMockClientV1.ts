@@ -1,12 +1,12 @@
-import { SmsSettingsMemoryClientV1 } from '../../src/version1/SmsSettingsMemoryClientV1';
+import { SmsSettingsMockClientV1 } from '../../src/version1/SmsSettingsMockClientV1';
 import { SmsSettingsClientFixtureV1 } from './SmsSettingsClientFixtureV1';
 
-suite('SmsSettingsMemoryClientV1', ()=> {
-    let client: SmsSettingsMemoryClientV1;
+suite('SmsSettingsMockClientV1', ()=> {
+    let client: SmsSettingsMockClientV1;
     let fixture: SmsSettingsClientFixtureV1;
 
     suiteSetup(() => {
-        client = new SmsSettingsMemoryClientV1();
+        client = new SmsSettingsMockClientV1();
 
         fixture = new SmsSettingsClientFixtureV1(client);
     });
