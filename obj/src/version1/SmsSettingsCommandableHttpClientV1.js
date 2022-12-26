@@ -57,7 +57,6 @@ class SmsSettingsCommandableHttpClientV1 extends pip_services3_rpc_nodex_1.Comma
     }
     setRecipient(correlationId, recipientId, name, phone, language) {
         return __awaiter(this, void 0, void 0, function* () {
-            let timing = this.instrument(correlationId, 'sms_settings.set_recipient');
             return yield this.callCommand('set_recipient', correlationId, {
                 recipient_id: recipientId,
                 name: name,

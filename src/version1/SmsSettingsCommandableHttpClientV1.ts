@@ -67,7 +67,6 @@ export class SmsSettingsCommandableHttpClientV1 extends CommandableHttpClient im
 
     public async setRecipient(correlationId: string, recipientId: string,
         name: string, phone: string, language: string): Promise<SmsSettingsV1> {
-        let timing = this.instrument(correlationId, 'sms_settings.set_recipient');
 
         return await this.callCommand(
             'set_recipient',
